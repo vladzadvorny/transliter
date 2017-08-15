@@ -1,10 +1,11 @@
 {
   "name": "transliter",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Transliterate cyrillic text to latin and URL generation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/test.js"
+    "test": "mocha test.js",
+    "build": "rimraf ./dist && webpack --progress"
   },
   "author": "Vlad Zadvorny <vladzadvorny@icloud.com>",
   "repository": {
@@ -12,15 +13,10 @@
     "url": "https://github.com/vladzadvorny/transliter.git"
   },
   "license": "MIT",
-  "keywords": [
-    "transliterate",
-    "cyrillic",
-    "url"
-  ],
+  "keywords": ["transliterate", "cyrillic", "url"],
   "devDependencies": {
-    "mocha": "^3.4.2"
-  },
-  "dependencies": {
-    "require-dir": "^0.3.2"
+    "mocha": "^3.4.2",
+    "rimraf": "^2.6.1",
+    "webpack": "^3.5.4"
   }
 }
