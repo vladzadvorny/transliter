@@ -1,16 +1,22 @@
+# Transliter
+
+[![NPM Version](https://img.shields.io/npm/v/transliter.svg)](https://www.npmjs.com/package/transliter)
+[![NPM Download](https://img.shields.io/npm/dm/transliter.svg)](https://www.npmjs.com/package/transliter)
+[![License](https://img.shields.io/npm/l/transliter.svg)](https://github.com/vladzadvorny/transliter/blob/master/LICENSE)
+
 Transliterate Russian, Ukrainian, Bulgarian, Macedonian, etc. cyrillic text to latin and URL generation
 
-#### Translation charmap:
+### Translation charmap:
 
 Translation charmap based on [ISO 9 system B](https://en.wikipedia.org/wiki/ISO_9)
 
-#### Installation:
+## Installation:
 
 ```sh
 $ npm install transliter
 ```
 
-#### Usage:
+## Usage:
 ### Node.js
 
 ```javascript
@@ -44,7 +50,7 @@ slugify('Создание ссылки')
 </html>
 ```
 
-#### AMD:
+### AMD:
 ```javascript
 requirejs.config({
   baseUrl: './dist/',
