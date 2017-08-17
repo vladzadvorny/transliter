@@ -7,9 +7,21 @@
 </head>
 
 <body>
-
+  <input type="text" placeholder="Напиши что-нибудь">
+  <p class="transliter"></p>
+  <p class="slugify"></p>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <script src="dist/transliter.js"></script>
-
+  <script>
+    $(function () {
+      $("input[type='text']").on('input', function () {
+        var text = $(this).val();
+        $('.transliter').text(transliter(text));
+        $('.slugify').text(slugify(text));
+      });
+    });
+  </script>
 </body>
 
 </html>

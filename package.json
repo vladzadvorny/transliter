@@ -1,11 +1,11 @@
 {
   "name": "transliter",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Transliterate cyrillic text to latin and URL generation",
   "main": "index.js",
   "scripts": {
     "test": "mocha test.js",
-    "build": "rimraf ./dist && webpack --progress"
+    "build": "rimraf ./dist && gulp"
   },
   "author": "Vlad Zadvorny <vladzadvorny@icloud.com>",
   "repository": {
@@ -15,8 +15,16 @@
   "license": "MIT",
   "keywords": ["transliterate", "cyrillic", "url"],
   "devDependencies": {
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-es3ify": "0.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "mocha": "^3.4.2",
     "rimraf": "^2.6.1",
-    "webpack": "^3.5.4"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
