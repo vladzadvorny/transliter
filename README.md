@@ -20,7 +20,7 @@ $ npm install transliter
 ### Node.js
 
 ```javascript
-const { transliter, slugify } = require('./index');
+const { transliter, slugify } = require('transliter');
 
 transliter('Транслитерируемый текст');
 //-> Transliteriruemy`j tekst

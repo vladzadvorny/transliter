@@ -1,6 +1,6 @@
 {
   "name": "transliter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Transliterate cyrillic text to latin and URL generation",
   "main": "index.js",
   "scripts": {
