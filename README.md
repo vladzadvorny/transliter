@@ -27,6 +27,9 @@ transliter('Транслитерируемый текст');
 
 slugify('Создание ссылки')
 //-> sozdanie-ssylki
+
+slugify('Создание ссылки с другим разделителем', '_')
+//-> sozdanie_ssylki_s_drugim_razdelitelem
 ```
 
 ### Browser:
@@ -61,6 +64,5 @@ requirejs.config({
 
 requirejs(['transliter', 'slugify'], function(transliter, slugify) {
   console.log(transliter('Транслитерируемый текст'));
-  console.log(slugify('Создание ссылки'));
 });
 ```

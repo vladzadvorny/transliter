@@ -15,3 +15,11 @@ it('Using slugify', () => {
     throw new Error(`Expected ${expectedResult}, but got ${result}`);
   }
 });
+
+it('Using slugify with separator', () => {
+  var expectedResult = 'sozdanie_ssylki_s_drugim_razdelitelem';
+  var result = slugify('Создание ссылки с другим разделителем', '_');
+  if (result !== expectedResult) {
+    throw new Error(`Expected ${expectedResult}, but got ${result}`);
+  }
+});
