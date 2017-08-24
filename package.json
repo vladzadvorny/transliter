@@ -1,10 +1,10 @@
 {
   "name": "transliter",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Transliterate cyrillic text to latin and URL generation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js",
+    "test": "mocha",
     "build": "rimraf ./dist && gulp"
   },
   "author": "Vlad Zadvorny <vladzadvorny@icloud.com>",
