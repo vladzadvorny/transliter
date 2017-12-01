@@ -1,10 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var transliter = require('./transliter');
 var slugify = require('./slugify');
+var isCyrillic = require('./isCyrillic');
 
 function bindGlobal(obj) {
   obj.transliter = transliter;
   obj.slugify = slugify;
+  obj.isCyrillic = isCyrillic;
   obj.transliter.noConflict = function() {
     var tr = obj.transliter;
     delete obj.transliter;
@@ -14,6 +16,11 @@ function bindGlobal(obj) {
     var sl = slugify;
     delete obj.slugify;
     return sl;
+  };
+  obj.isCyrillic.noConflict = function() {
+    var isCyr = isCyrillic;
+    delete obj.isCyrillic;
+    return isCyr;
   };
 }
 
@@ -26,6 +33,9 @@ try {
     });
     define('slugify', function() {
       return slugify;
+    });
+    define('isCyrillic', function() {
+      return isCyrillic;
     });
     // obj
   } else if (
@@ -43,9 +53,10 @@ try {
 if (typeof module !== undefined && module.exports) {
   exports.transliter = transliter;
   exports.slugify = slugify;
+  exports.isCyrillic = isCyrillic;
 }
 
-},{"./slugify":3,"./transliter":4}],2:[function(require,module,exports){
+},{"./isCyrillic":3,"./slugify":4,"./transliter":5}],2:[function(require,module,exports){
 module.exports={
   "а": "a",
   "б": "b",
@@ -154,14 +165,23 @@ module.exports={
 }
 
 },{}],3:[function(require,module,exports){
-var transliter = require('./transliter');
-
-module.exports = function(text) {
-  text = transliter(text);
-  return text.replace(/ /g, '-').replace(/[^a-zA-Z0-9-_]/g, '').toLowerCase();
+module.exports = function(term) {
+  return /[а-яА-ЯЁё]/.test(term);
 };
 
-},{"./transliter":4}],4:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
+var transliter = require('./transliter');
+
+module.exports = function(text, separator) {
+  separator = separator || '-';
+  text = transliter(text);
+  return text
+    .replace(/ /g, separator)
+    .replace(/[^a-zA-Z0-9-_]/g, '')
+    .toLowerCase();
+};
+
+},{"./transliter":5}],5:[function(require,module,exports){
 var charmap = require('./charmap.json');
 
 module.exports = function(text) {

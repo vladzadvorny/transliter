@@ -1,6 +1,6 @@
 {
   "name": "transliter",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Transliterate cyrillic text to latin and URL generation",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,12 @@
     "url": "https://github.com/vladzadvorny/transliter.git"
   },
   "license": "MIT",
-  "keywords": ["transliterate", "cyrillic", "url"],
+  "keywords": ["transliterate", "cyrillic", "url", "isCyrillic"],
   "devDependencies": {
     "browserify": "^14.4.0",
+    "eslint": "^4.12.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.3.1",
     "gulp": "^3.9.1",
     "gulp-es3ify": "0.0.0",
     "gulp-rename": "^1.2.2",
@@ -26,5 +29,8 @@
     "rimraf": "^2.6.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
