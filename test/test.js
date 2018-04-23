@@ -10,7 +10,10 @@ describe('Using transliter', () => {
 
   it('Using slugify', () => {
     const expectedResult = 'sozdanie-ssylki';
-    const result = slugify('Создание ссылки');
+    const result = slugify(
+      'Создание                          ссылки           '
+    );
+    console.log(result);
     assert(result === expectedResult);
   });
 
